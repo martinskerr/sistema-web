@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    
+    
+
+</head>
+<body>
+    
+    <main>
+
+        <div id="containerPrincipal">
+            <h1 id="h1Principal">Bienvenido , usuario</h1>
+            <p id="nombre">Este es un aproximador de muerte en base a la api de CHAT-GPT3, recuerda que es solo un aproximador por lo que la 
+               respuesta es inexacta... hasta cierto punto. 
+            </p>
+
+            <p id = "resultado">
+
+            </p>
+
+            
+            <label for="inputPrincipal" id="labelNombre"> Ingresa tu nombre</label>
+            <input type="text" id="inputNombre" class="input-field">
+            <button id="buttonMain">
+                <span>Ingresar</span>
+            </button>
+
+            <label for="inputPais" id="labelNacionalidad"> Ingresa tu pais</label>
+            <input type="text" id="inputNacionalidad" class="input-field">
+            <button id="buttonNacionalidad">
+                <span>Ingresar</span>
+            </button>
+            
+            <script>
+                   
+                const inputNombre = document.getElementById('inputNombre');
+                const pNombre = document.getElementById('nombre')
+                const buttonNombre = document.getElementById('buttonMain');
+                const resultado = document.getElementById('resultado');
+                const h1Principal = document.getElementById('h1Principal');
+                const labelNombre = document.getElementById('labelNombre')
+
+                const inputNacionalidad = document.getElementById('inputNacionalidad')
+                const labelNacionalidad = document.getElementById('labelNacionalidad');
+                const buttonNacionalidad = document.getElementById('buttonNacionalidad');
+
+                const nacionalidades = {
+
+                    Peru: "72 Años",
+                    Chile: "88 Años",
+                    Colombia: "80 Años",
+                    Venezuela: "69 Años",
+                    Argentina: "85 Años",
+                    Brasil: "87 Años",
+
+                };
+
+
+                function calculadorNacionalidad(){
+
+                    if(inputNacionalidad.value == 'Argentina'){
+
+                        resultado.textContent = `Tu probabilidad de vida es hasta ${nacionalidades.Argentina} ;)`
+                    };
+
+                    if(inputNacionalidad.value == 'Peru'){
+
+                        resultado.textContent = `Tu probabilidad de vida es hasta ${nacionalidades.Peru} ;)`
+                    };
+                    if(inputNacionalidad.value == 'Colombia'){
+
+                        resultado.textContent = `Tu probabilidad de vida es hasta ${nacionalidades.Colombia} ;)`
+                    };
+                    
+                    if(inputNacionalidad.value == 'Chile'){
+
+                    resultado.textContent = `Tu probabilidad de vida es hasta ${nacionalidades.Chile} ;)`
+                    };
+
+                    if(inputNacionalidad.value == 'Venezuela'){
+
+                    resultado.textContent = `Tu probabilidad de vida es hasta ${nacionalidades.Venezuela} ;)`
+                    };
+
+                    if(inputNacionalidad.value == 'Brasil'){
+
+                    resultado.textContent = `Tu probabilidad de vida es hasta ${nacionalidades.Brasil} ;)`
+                    };     
+                };
+
+                buttonNacionalidad.addEventListener('click', () => {
+
+                    calculadorNacionalidad()
+
+                });
+
+
+                buttonNombre.addEventListener('click', () => {
+
+                    const nombreUsuario = inputNombre.value;
+
+                    const keyNombre= {
+                    nombre: nombreUsuario
+                    };
+
+                    nombre.textContent = `${keyNombre.nombre}, este es solo un aproximado, necesitamos tu nacionalidad para darte un aproximado de tu muerte :3`;
+                    h1Principal.textContent = `Hola ${keyNombre.nombre}`;
+                    labelNombre.textContent = "ingresa tu Nacionalidad";
+                    inputNombre.value = '';
+
+                });
+                    
+
+
+            </script>
+            
+
+
+    </main>
+
+
+    
+</body>
+</html>
